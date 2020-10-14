@@ -25,20 +25,22 @@
 
     <div class="container-fluid">
 
-        <div class="row border">
+        <div class="row">
 
-            <div class="col-4 citySearch border">
+            <div class="col-4 citySearch bg-light form-group">
                 <h3>Search for a City:</h3>
                 <form class="form-inline my-2 my-lg-0">
                     <input class="form-control mr-sm-2 search" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-primary my-2 my-sm-0 searchBtn" type="submit">Search</button>
                 </form>
-                <div class="searchHistory"></div>
+                <div class="searchHistory">
+                    
+                </div>
             </div>
 
-            <div class="col-8 weatherDisp border">
+            <div class="col-8 weatherDisp">
 
-                <div class="row currentWeather border">
+                <div class="row currentWeather border rounded">
 
                     <div class="col-12 border">
                         <h2 class="cityInfo pb-3 pt-3"></h2>
@@ -50,29 +52,11 @@
 
                 </div>
 
-                <div class="row">
+                <div class="row mt-3">
                     <h3 class="pl-3">5-Day Forecast</h3>
                 </div>
-                <div class="row 5DayForecast border">
-                    <div class="col-2 day1 border rounded p-5">
 
-                    </div>
-
-                    <div class="col-2 day2 border rounded p-5">
-                        
-                    </div>
-
-                    <div class="col-2 day3 border rounded p-5">
-
-                    </div>
-
-                    <div class="col-2 day4 border rounded p-5">
-
-                    </div>
-
-                    <div class="col-2 day5 border rounded p-5">
-
-                    </div>
+                <div class="row 5DayForecast card-group">
 
                 </div>
             </div>
