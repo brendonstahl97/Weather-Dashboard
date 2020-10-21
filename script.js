@@ -5,6 +5,7 @@ var humidityEl = $(".humidity");
 var windSpeedEl = $(".windSpeed");
 var uvIndexEl = $(".uvIndex");
 var searchHistEl = $(".searchHistory");
+var iconEl = $(".icon");
 
 //function to get the forcast for a given city
 function getForecast(cityName) {
@@ -46,6 +47,7 @@ function getForecast(cityName) {
         }).then(function (response) {
 
             var date = new Date(response.current.dt * 1000);
+            console.log(queryUrl);
 
             //populate current weather box
             cityInfoEl.text(city[0].toUpperCase() + city.slice(1) + " " + (parseInt(date.getMonth()) + 1) + "/" + date.getDate() + "/" + date.getFullYear());
@@ -53,7 +55,9 @@ function getForecast(cityName) {
             humidityEl.text("Humidity: " + response.current.humidity + "%");
             windSpeedEl.text("Wind Speed: " + response.current.wind_speed + "MPH");
             uvIndexEl.text("UV Index: " + response.current.uvi);
+            iconEl.attr("src", "http://openweathermap.org/img/wn/" + response.current.weather[0].icon + "@2x.png");
 
+            uvIndexEl.removeAttr("class");
             if (response.current.uvi < 3) {
                 uvIndexEl.addClass("btn btn-success")
             } else if (response.current.uvi >= 3 && response.current.uvi < 5) {
@@ -79,7 +83,11 @@ function getForecast(cityName) {
                 var dailyTemp = $("<p>Temp: " + day.temp.day + " F</p>");
                 var dailyHumidity = $("<p>Humidity: " + day.humidity + "%</p>");
 
+                var dailyIcon = $("<img alt='Weather Icon' />");
+                dailyIcon.attr("src", "http://openweathermap.org/img/wn/" + day.weather[0].icon + ".png")
+
                 dailyWeather.append(dailyDate);
+                dailyWeather.append(dailyIcon);
                 dailyWeather.append(dailyTemp);
                 dailyWeather.append(dailyHumidity);
 
