@@ -6,4 +6,4 @@ In order to use the application, download the files and open index.html in the b
 
 ## Example Photo
 
-![Weather Dashboard Example Photo](/Assets/WeatherPic.jpg)
+![Weather Dashboard Example Photo](Assets/WeatherPic.png)
